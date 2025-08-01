@@ -371,13 +371,13 @@ export default function FinancingConfirmationPage({ params }: { params: { id: st
             {/* What's Next */}
             <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-white">What's Next?</CardTitle>
+                <CardTitle className="text-white">What&#39;s Next?</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>
-                    <p className="text-slate-300">You'll receive an SMS confirmation within 30 minutes</p>
+                    <p className="text-slate-300">You&#39;ll receive an SMS confirmation within 30 minutes</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2"></div>

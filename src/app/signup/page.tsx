@@ -344,7 +344,7 @@ export default function Signup() {
 
         {/* Footer */}
         <div className="text-center mt-8 text-slate-500 text-sm">
-          <p>By creating an account, you're joining a community committed to halal finance</p>
+          <p>By creating an account, you&#39;re joining a community committed to halal finance</p>
           <p className="mt-2">© 2024 HalalPay. Built with Islamic principles and modern technology.</p>
         </div>
       </div>

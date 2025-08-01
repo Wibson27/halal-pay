@@ -50,7 +50,7 @@ export default function Login() {
             </div>
             <span className="text-white font-bold text-2xl">HalalPay</span>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Assalamu'alaikum</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Assalamu&apos;alaikum</h1>
           <p className="text-slate-400">Welcome back to your halal financial journey</p>
         </div>
 
@@ -118,7 +118,7 @@ export default function Login() {
                   <Checkbox
                     id="remember"
                     checked={rememberMe}
-                    onCheckedChange={setRememberMe}
+                    onCheckedChange={(checked) => setRememberMe(checked === true)}
                     className="border-slate-600 data-[state=checked]:bg-yellow-400 data-[state=checked]:border-yellow-400"
                   />
                   <Label htmlFor="remember" className="text-slate-300 text-sm">
@@ -170,7 +170,7 @@ export default function Login() {
 
             <div className="text-center">
               <p className="text-slate-400 text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="/signup" className="text-yellow-400 hover:text-yellow-300 font-medium transition-colors">
                   Create one now
                 </Link>

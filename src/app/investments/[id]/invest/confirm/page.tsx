@@ -200,7 +200,7 @@ export default function InvestConfirmPage({ params }: { params: { id: string } }
                     <p className="text-blue-400 font-medium mb-2">Next Steps</p>
                     <ul className="text-slate-300 text-sm space-y-1">
                       <li>• Investment will be processed within 1-2 business days</li>
-                      <li>• You'll receive email confirmation with investment certificate</li>
+                      <li>• You&apos;ll receive email confirmation with investment certificate</li>
                       <li>• Track your investment performance in your dashboard</li>
                       <li>• Quarterly statements will be sent automatically</li>
                     </ul>
