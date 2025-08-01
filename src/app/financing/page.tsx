@@ -201,22 +201,20 @@ export default function FinancingPage() {
         </div>
 
         <Tabs defaultValue="marketplace" className="space-y-6">
-          <div className="flex justify-center">
-            <TabsList className="grid w-full max-w-md grid-cols-2 bg-slate-800/50 border-slate-700">
-              <TabsTrigger
-                value="marketplace"
-                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
-              >
-                Financing Marketplace
-              </TabsTrigger>
-              <TabsTrigger
-                value="portfolio"
-                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
-              >
-                My Financing
-              </TabsTrigger>
-            </TabsList>
-          </div>
+          <TabsList className="grid w-full grid-cols-2 bg-slate-800 border-slate-700">
+            <TabsTrigger
+              value="marketplace"
+              className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
+            >
+              Financing Marketplace
+            </TabsTrigger>
+            <TabsTrigger
+              value="portfolio"
+              className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
+            >
+              My Financing
+            </TabsTrigger>
+          </TabsList>
 
           <TabsContent value="marketplace" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">

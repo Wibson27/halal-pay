@@ -193,25 +193,23 @@ export default function MerchantsPage() {
           <p className="text-slate-400">Explore Syariah-compliant merchants and services for your needs</p>
         </div>
 
-        {/* Centered Tabs */}
-        <div className="flex justify-center mb-8">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-md">
-            <TabsList className="grid w-full grid-cols-2 bg-slate-800/50 border border-slate-700">
-              <TabsTrigger
-                value="directory"
-                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900 text-slate-300"
-              >
-                Merchant Directory
-              </TabsTrigger>
-              <TabsTrigger
-                value="my-merchants"
-                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900 text-slate-300"
-              >
-                My Merchants
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
+        {/* Full Width Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6 mb-8">
+          <TabsList className="grid w-full grid-cols-2 bg-slate-800 border-slate-700">
+            <TabsTrigger
+              value="directory"
+              className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900 text-slate-300"
+            >
+              Merchant Directory
+            </TabsTrigger>
+            <TabsTrigger
+              value="my-merchants"
+              className="data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900 text-slate-300"
+            >
+              My Merchants
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
 
         {activeTab === "directory" && (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
