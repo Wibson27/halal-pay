@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, use } from "react"
 import Link from "next/link"
 import { ArrowLeft, DollarSign, Calculator, Shield, AlertTriangle, CheckCircle, CreditCard } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,7 +11,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 
-export default function InvestPage({ params }: { params: { id: string } }) {
+export default function InvestPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const [investmentAmount, setInvestmentAmount] = useState("")
   const [investmentType, setInvestmentType] = useState("one-time")
   const [monthlyAmount, setMonthlyAmount] = useState("")
@@ -48,7 +49,7 @@ export default function InvestPage({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-4xl mx-auto p-6">
         <Link
-          href={`/investments/${params.id}`}
+          href={`/investments/${id}`}
           className="inline-flex items-center text-slate-400 hover:text-white transition-colors mb-6"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
@@ -359,7 +360,7 @@ export default function InvestPage({ params }: { params: { id: string } }) {
               </CardContent>
             </Card>
 
-            <Link href={`/investments/${params.id}/invest/confirm`}>
+            <Link href={`/investments/${id}/invest/confirm`}>
               <Button
                 className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-3"
                 disabled={

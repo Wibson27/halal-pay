@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, use } from "react"
 import Link from "next/link"
 import { ArrowLeft, CheckCircle, Shield, Clock, CreditCard, FileText } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 
-export default function InvestConfirmPage({ params }: { params: { id: string } }) {
+export default function InvestConfirmPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const [isProcessing, setIsProcessing] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
 
@@ -97,7 +98,7 @@ export default function InvestConfirmPage({ params }: { params: { id: string } }
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-4xl mx-auto p-6">
         <Link
-          href={`/investments/${params.id}/invest`}
+          href={`/investments/${id}/invest`}
           className="inline-flex items-center text-slate-400 hover:text-white transition-colors mb-6"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />

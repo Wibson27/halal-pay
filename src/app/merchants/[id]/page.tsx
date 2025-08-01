@@ -2,7 +2,7 @@
 
 import { use } from "react"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   ArrowLeft,
   Star,

@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect, use } from "react"
 import Link from "next/link"
 import { ArrowLeft, TrendingUp, Shield, Star, Calendar, DollarSign, Users, FileText, AlertTriangle } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,8 +9,9 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function InvestmentDetailsPage({ params }: { params: { id: string } }) {
+export default function InvestmentDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   // Mock data - in real app this would come from API based on params.id
+  const { id } = use(params)
   const investment = {
     id: "syariah-equity-fund",
     name: "Syariah Equity Fund",
