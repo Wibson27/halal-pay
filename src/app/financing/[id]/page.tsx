@@ -1,5 +1,6 @@
 "use client"
 
+import { use } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import {
@@ -283,8 +284,9 @@ const financingProducts = {
   },
 }
 
-export default function FinancingDetailPage({ params }: { params: { id: string } }) {
-  const product = financingProducts[params.id as keyof typeof financingProducts]
+export default function FinancingDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const product = financingProducts[id as keyof typeof financingProducts]
 
   if (!product) {
     notFound()
