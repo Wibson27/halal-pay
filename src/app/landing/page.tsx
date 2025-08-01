@@ -279,7 +279,7 @@ export default function Landing() {
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-slate-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                  <p className="text-slate-300 mb-6 leading-relaxed">&quot;{testimonial.content}&quot;</p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4">
                       <span className="text-slate-900 font-bold">{testimonial.name.charAt(0)}</span>
