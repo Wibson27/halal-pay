@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, use } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import {
@@ -123,7 +123,8 @@ const financingProducts = {
   },
 }
 
-export default function FinancingApplicationPage({ params }: { params: { id: string } }) {
+export default function FinancingApplicationPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({
     // Personal Information
@@ -155,7 +156,7 @@ export default function FinancingApplicationPage({ params }: { params: { id: str
     agreeToMarketing: false,
   })
 
-  const product = financingProducts[params.id as keyof typeof financingProducts]
+  const product = financingProducts[id as keyof typeof financingProducts]
 
   if (!product) {
     notFound()
